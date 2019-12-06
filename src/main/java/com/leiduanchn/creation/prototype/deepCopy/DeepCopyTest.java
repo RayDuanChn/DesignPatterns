@@ -1,6 +1,8 @@
 package com.leiduanchn.creation.prototype.deepCopy;
 
 ;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -9,10 +11,11 @@ import java.util.Date;
  */
 public class DeepCopyTest {
 
-    public static void main(String[] args) throws CloneNotSupportedException {
+    public static void main(String[] args) throws ParseException {
 
-        //Sheep tomSheep = new Sheep("Tom", new SimpleDateFormat().parse("2019-10-10"));
-        Date date = new Date(234234345L);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        Date date = sdf.parse("2019-10-10 11:48:27");
+        System.out.println(sdf.format(date));
         Sheep tomSheep = new Sheep("Tom", date);
         //Sheep cloneSheep = (Sheep) tomSheep.clone();
         Sheep cloneSheep = DeepCoyBySerialization.clone(tomSheep);
