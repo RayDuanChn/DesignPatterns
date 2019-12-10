@@ -15,7 +15,7 @@ public class Waiter {
         this.pizzaBuilder = pizzaBuilder;
     }
 
-    //Director decide how to deal with the process of making pizza
+    //3.2 Encapsulate the parsing of the common input in a Director class.
     public Pizza getPizza(){
 
         pizzaBuilder.createNewPizzaProduct();

@@ -6,7 +6,8 @@ package com.leiduanchn.creation.builder;
  * @create 2019-12-10 11:45 a.m.
  */
 
-/* "ConcreteBuilder" */
+// "ConcreteBuilder", 3.4 Define a Builder derived class for each target representation.
+
 public class SpicyPizzaBuilder extends PizzaBuilder{
     @Override
     public void buildDough() {
