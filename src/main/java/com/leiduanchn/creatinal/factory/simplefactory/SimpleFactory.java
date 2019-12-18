@@ -17,13 +17,18 @@ public class SimpleFactory {
 
     public static Pizza createPizza(String type){
 
+        Pizza pizza;
         if("greece".equals(type)){
-            return new GreecePizza();
+            pizza = new GreecePizza();
         }else if("cheese".equals(type)){
-            return new CheesePizza();
+            pizza = new CheesePizza();
         }else{
             return null;
         }
+        pizza.setName(type);
+        createPizza(pizza);
+        return pizza;
+
     }
 
 
@@ -33,5 +38,13 @@ public class SimpleFactory {
     }
     public static Pizza createCheesePizza(){
         return new CheesePizza();
+    }
+
+
+    private static void createPizza(Pizza pizza){
+        pizza.prepare();
+        pizza.bake();
+        pizza.cut();
+        pizza.box();
     }
 }

@@ -3,19 +3,14 @@ package com.leiduanchn.creatinal.factory.simplefactory;
 import com.leiduanchn.creatinal.factory.Pizza;
 
 /**
+ * 调用者， 调用静态工厂
  * @author leiduanchn
  * @create 2019-12-03 11:48 a.m.
  */
 public class OrderPizza {
 
     public Pizza orderPizza(String name){
-
-        Pizza pizza = SimpleFactory.createPizza(name);
-        if(pizza != null){
-            pizza.setName(name);
-            createPizza(pizza);
-        }
-        return pizza;
+        return SimpleFactory.createPizza(name);
     }
 
 
